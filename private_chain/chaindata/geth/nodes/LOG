@@ -1,0 +1,36 @@
+=============== Apr 5, 2018 (EDT) ===============
+22:02:11.989834 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+22:02:11.995985 db@open opening
+22:02:11.999404 version@stat F·[] S·0B[] Sc·[]
+22:02:11.999978 db@janitor F·2 G·0
+22:02:12.000043 db@open done T·4.022359ms
+22:10:05.660733 db@close closing
+22:10:05.661115 db@close done T·378.278µs
+=============== Apr 5, 2018 (EDT) ===============
+22:10:18.939848 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+22:10:18.940597 version@stat F·[] S·0B[] Sc·[]
+22:10:18.940643 db@open opening
+22:10:18.940737 journal@recovery F·1
+22:10:18.944244 journal@recovery recovering @1
+22:10:18.947778 memdb@flush created L0@2 N·745 S·7KiB "n:\x11..ail,v36":"version,v1"
+22:10:18.950677 version@stat F·[1] S·7KiB[7KiB] Sc·[0.25]
+22:10:18.952344 db@janitor F·3 G·0
+22:10:18.952389 db@open done T·11.720325ms
+22:24:22.685624 db@close closing
+22:24:22.686027 db@close done T·400.326µs
+=============== Apr 5, 2018 (EDT) ===============
+22:45:46.161433 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+22:45:46.163666 version@stat F·[1] S·7KiB[7KiB] Sc·[0.25]
+22:45:46.163735 db@open opening
+22:45:46.163867 journal@recovery F·1
+22:45:46.167601 journal@recovery recovering @3
+22:45:46.172694 memdb@flush created L0@5 N·1275 S·13KiB "n:\x11..ail,v753":"n:\xa9..ing,v747"
+22:45:46.175729 version@stat F·[2] S·20KiB[20KiB] Sc·[0.50]
+22:45:46.178830 db@janitor F·4 G·0
+22:45:46.178875 db@open done T·15.114315ms
+22:45:50.262756 table@compaction L0·2 -> L1·0 S·20KiB Q·2037
+22:45:50.268733 table@build created L1@8 N·13 S·679B "n:\x11..ail,v753":"version,v1"
+22:45:50.268833 version@stat F·[0 1] S·679B[0B 679B] Sc·[0.00 0.00]
+22:45:50.269120 table@compaction committed F-1 S-19KiB Ke·0 D·2007 T·6.241715ms
+22:45:50.300886 table@remove removed @5
+22:45:50.301039 table@remove removed @2
