@@ -20,4 +20,8 @@ contract HelloWorld {
             selfdestruct(owner);
         }
     }
+
+    function() public payable {
+
+    }
 }
