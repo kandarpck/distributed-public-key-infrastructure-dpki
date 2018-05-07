@@ -1,0 +1,5 @@
+{
+  "server": {
+    "baseDir": ["./plugin", "./build/contracts"]
+  }
+}

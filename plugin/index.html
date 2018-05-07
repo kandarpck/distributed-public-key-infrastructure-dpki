@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  <head>
+  	<style>
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button2 {background-color: #008CBA;} /* Blue */
+.button3 {background-color: #f44336; visibility: hidden;} /* Red */ 
+.button4 {background-color: #e7e7e7; color: black;} /* Gray */ 
+.button5 {background-color: #555555;} /* Black */
+</style>
+    <title>Check Certificate</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Web3.js will help us interact with the deployed smart contract -->
+    <script src="web3.min.js"></script>
+    <!-- Truffle contract  will our life easier when interacting with smart contracts -->
+    <script src="truffle-contract.js"></script>
+
+    <script src="popup.js"></script>
+     <!-- JQuery will help us extract data from json files -->
+  </head>
+  <body>
+    <h1 class="text-center">IKP Certificate Checker</h1>
+    <hr/>
+
+    <div style="text-align: center;">
+      
+    <button id="checkPage">Check now!</button>
+    <button class=button3 visibility=hidden id="warning">ALERT! MITM Attack possible.</button>
+    <div>
+      <ul id="revokedCerts">
+        <!-- Events will appear here from app.js -->
+      </ul>
+    </div>
+</div>
+
+   
+    
+  </body>
+</html>
+
+    

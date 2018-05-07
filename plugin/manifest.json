@@ -1,13 +1,13 @@
 {
   "manifest_version": 2,
 
-  "name": "DPKI",
-  "description": "This extension will analyze a cert using DPKI",
-  "version": "1.0",
-
+  "name": "IKP",
+  "description": "This extension will analyze a cert using IKP",
+  "version": "1.1",
+  "content_security_policy": "script-src 'self' https://cdn.jsdelivr.net; unsafe-inline object-src 'self'",
   "browser_action": {
    "default_icon": "icon.png",
-   "default_popup": "popup.html"
+   "default_popup": "index.html"
   },
   "permissions": [
    "activeTab"
