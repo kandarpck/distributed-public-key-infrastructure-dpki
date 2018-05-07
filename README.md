@@ -11,8 +11,9 @@ Below are the main actors in the IKP implementation.
     * Multiple CAs which are used to register the domains.
     * Domain Owners who want to register their domain on the Blockchain.
 
-#Setup
-Below is the screenshot of the setup used in implementing the solution. Here are the main technologies used from left to right and top to bottom.
+
+# Setup
+Here are the main technologies used - 
 
     * A private subnet which runs a local version of the Blockchain and has local nodes and miners.
     * A user interface (Mist Browser) which can talk to the local version of the Blockchain and display the various components, accounts, contracts, among other items
@@ -21,8 +22,8 @@ Below is the screenshot of the setup used in implementing the solution. Here are
     * Truffle interface to compile, build and deploy contracts and test them.
 
 
-#IKP Smart Contract
-The below screenshot shows the IKP smart contract and all the functions possible.
+# IKP Smart Contract
+Functions possible with the smart contract
 
     * Add a detector and register it.
     * Register CAs which can be used by the domain owners to issues certificates.
@@ -31,38 +32,37 @@ The below screenshot shows the IKP smart contract and all the functions possible
     * Revoke certificates when the detector receives a report of a malicious certificate in the wild.
     * Detector also has a power to Blacklist CAs when a rogue CA misbehaves multiple times and matches a criteria.
     
-        
-#Register CA
+
+# Register CA
 We can register multiple CAs but for this implementation we show a Good CA and a Rogue CA. 
 
-
-#Register DCP
+# Register DCP
 Two DCPs are shown here. Multiple other scenarios are possible but these two cover the cases we want to present.
 
     * Normal scenario where domain owner registers a DCP with a CA of choice.
     * Malicious scenario where a Rogue CA issues a certificate without the knowledge of the original domain owner.
 
 
-#Sign RP
+# Sign RP
 The DCPs are not valid until they are signed with a reaction policy. The SignRP function was used here to sign the above DCPs. One important detail to note here is that any CA can sign the RP and publish it on the Blockchain. But the detector when it detects the malicious intentions can take action against the cert and the CA. Here, the Rogue CA has signed the DCP with badssl-google.com which it can then use in conjunction with an adversary to perform MITM attacks. 
 
 
-#Detectors
+# Detectors
 These are entities such as Google which when received with a report of a malicious acitivity on the IKP, investigate using the public blocks of the system and can take action if found guilty and trigger the reaction policy.
 
     
-#Revoke Signature
-Here we show an example of the Detector revoking the certificate using the Hash and the CA address. It also builds a profile of the CAs and keeps a check on their activites and is in the position to rate them too. 
+# Revoke Signature
+Revoking the certificate is possible using the Hash and the CA address. It also builds a profile of the CAs and keeps a check on their activites and is in the position to rate them too. 
 
 
-#Blacklist CA
-Here we show an example of the Detector using the profile that it built from the revoking certs in the previous example. When a certain threshold is breached (which can be tweaked), the Detector can Blacklist the CA which will remove it from the IKP Blockchain and no other domain owner can request certificates from it. 
+# Blacklist CA
+Detector uses the profile that it built from the revoking certs in the previous example. When a certain threshold is breached (which can be tweaked), the Detector can Blacklist the CA which will remove it from the IKP Blockchain and no other domain owner can request certificates from it. 
 
 
-#Chrome Plugin
+# Chrome Plugin
 We developed a Chrome Browser Plugin which talks to the Blockchain using the JS Web3 API. When any user visits a website which has a known rogue certificate in the revoked certificate list, the plugin automatically checks the hash of the certificate and alerts the user of a MITM attack. The major incentive for the user to install this plugin is that he does not have to create an account on the Ethereum network and there is no fee(gas used) associated with checking the Blockchain. 
 
 
-#Web Dashboard
+# Web Dashboard
 A future scope could be an implementation of a more detailed version of the Chrome Plugin created in a similar way using JS and Web3 to interact and automate the process for each of the actors in the system. For this implementation, the Mist browser provides all the same functionality to perform the task in a private virtual VM environment mode.  
 
